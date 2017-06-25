@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+  <head>
+<style>
+body {
+	color:#888;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18pt;
+}
+.content {
+	width:700px;
+	margin:10px auto;
+}
+form {
+	padding:20px;
+	width:100%;
+	border:1px solid #ddd;
+}
+
+select {
+	font-size: 20pt;
+}
+input[type="text"] {
+	padding:10px;
+	font-size: 18pt;
+	width:50px;
+}
+h1 {
+	padding:10px;
+	margin-bottom: 0px;
+}
+input[type="checkbox"] {
+	padding:10px;
+	font-size: 18pt;
+	width:50px;
+}
+#check {
+	width:300px;
+	font-size: 20px;
+	height:60px;
+	margin:10px auto;
+}
+</style>
+  <script src="jquery-2.1.0.min.js"></script>
+  <script>
+	$(function() {
+		$('#check').click(function() {
+			var board = $('#board').val();
+			var window = $('#window').val();
+			var string = "board="+board+"&window="+window;
+			$('#result').load("/homeworktask4?" + string);
+		});
+	});
+</script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  </head>
+
+  <body>
+  <div class="content">
+  <div class="task">
+  	Построить дом. Дом строится из 
+  	<ol>
+  		<li>1000 досок</li>
+  		<li>12 окон</li>
+  	</ol>
+  	
+  </div>
+	<form>
+		<p>
+		Добавим досок <input type = "text" id = "board"></input>
+		</br></br>
+		Добавим окон <input type = "text" id = "window"></input>
+		</br></br>
+		<input type = "button" id = "check" value = "Построить"></input>
+		</p>
+	</form>
+	<p>Result</p>
+		<div id = "result"></div>
+	</div>
+  </body>
+</html>
